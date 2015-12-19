@@ -1,0 +1,19 @@
+<h2>Login user: {{uc.login_user.name}}</h2>
+<h3 ng-if="uc.login_user.name === undefined || uc.login_user.name.length <= 0"> You need to login, first! <a href='#/login'>Go login</a></h3>
+<div ng-if="uc.login_user.name.length > 1">
+	<a href='#/login' role='button' ng-click="uc.logout()">Log Out</a> | <a ng-href="#/main">Cancel</a>
+	<hr>
+	<div>
+		<h2>Put the question and options here </h2>
+		<form name='myForm' id='myForm' ng-submit='tc.create(uc.login_user._id)'>
+			<div> Question: <input name='topic' type='text' ng-model='tc.new_topic.title' required></div>
+			<div> Option1: <input type='text' ng-model='tc.new_topic.option1.name' required></div>
+			<div> Option2: <input type='text' ng-model='tc.new_topic.option2.name' required></div>
+			<div> Option3: <input type='text' ng-model='tc.new_topic.option3.name' required></div>
+			<div> Option4: <input type='text' ng-model='tc.new_topic.option4.name' required></div>
+			<div> <input type='submit' value='Create Poll'></div>
+		</form>
+		<p style="color:maroon" ng-bind="tc.err_topic"></p>
+		<p style="color:maroon" ng-bind="tc.err_option"></p>
+	</div>
+</div>

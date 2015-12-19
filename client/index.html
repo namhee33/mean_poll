@@ -1,0 +1,28 @@
+
+<html ng-app='myApp'>
+	<head>
+		<title>Hello Survey Polls</title>
+		<link rel='stylesheet' href='./static/style.css'>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="angular-route.js"></script>
+		<script type="text/javascript" src="angular-messages.js"></script>
+		<script type="text/javascript" src="./js/factories/userFactory.js"></script>
+		<script type="text/javascript" src="./js/factories/topicFactory.js"></script>
+	
+		<!-- more Factory -->
+		
+		<script type="text/javascript" src="./js/controllers/usersController.js"></script>
+		<script type="text/javascript" src="./js/controllers/topicsController.js"></script>
+		
+		<!-- more Controller js -->
+		
+		<script type="text/javascript" src="./js/config/routes.js"></script>
+		
+	</head>
+	<body ng-controller='usersController as uc'>
+		<div id='container'>
+			
+			<div ng-view=''></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<h2>Login user: {{uc.login_user.name}}</h2>
+<h3 ng-if="uc.login_user.name === undefined || uc.login_user.name.length <= 0"> You need to login, first! <a href='#/login'>Go login</a></h3>
+<div ng-if="uc.login_user.name.length > 1">
+	<a href='#/login' role='button' ng-click="uc.logout()">Log Out</a> | <a ng-href="#/main">Go to Polls</a>
+	<hr>
+	<div>
+		<h2>{{tc.curr_topic.title}}</h2>
+		<h3>Click the Vote button to choose one.</h3>
+
+		<table>
+			<thead>
+				<th>Options</th>
+				<th>Current Count of Votes</th>
+				<th>Action</th>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>{{tc.curr_topic.option1.name}}</td>
+					<td>{{tc.curr_topic.option1.vote}}</td>
+					<td><button ng-click="tc.voting('option1')">vote</button></td>
+				</tr>
+				<tr>
+					<td>{{tc.curr_topic.option2.name}}</td>
+					<td>{{tc.curr_topic.option2.vote}}</td>
+					<td><button ng-click="tc.voting('option2')">vote</button></td>
+				</tr>
+				<tr>
+					<td>{{tc.curr_topic.option3.name}}</td>
+					<td>{{tc.curr_topic.option3.vote}}</td>
+					<td><button ng-click="tc.voting('option3')">vote</button></td>
+				</tr>
+				<tr>
+					<td>{{tc.curr_topic.option4.name}}</td>
+					<td>{{tc.curr_topic.option4.vote}}</td>
+					<td><button ng-click="tc.voting('option4')">vote</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>

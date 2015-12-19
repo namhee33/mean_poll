@@ -1,0 +1,33 @@
+
+<h2>Login user: {{uc.login_user.name}}</h2>
+<h3 ng-if="uc.login_user.name === undefined || uc.login_user.name.length <= 0"> You need to login, first! <a href='#/login'>Go login</a></h3>
+<div ng-if="uc.login_user.name.length > 1">
+	<a href='#/login' role='button' ng-click="uc.logout()">Log Out</a> | <a ng-href="#/create">Create a New Poll</a>
+	<hr>
+
+	<div id='body'>
+		<h2>Current Polls </h2>
+		<input type='text' placeholder='search..' ng-model='filter_name'>
+		
+		<table>
+			<thead>
+				<th>Name</th>
+				<th>Survey Question</th>
+				<th>Date Posted</th>
+				<th>Action</th>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat='topic in tc.topics | filter: filter_name track by $index'>
+					<td>{{topic._user.name}}</td>
+					<td><a href="#/show/{{topic._id}}">{{topic.title}}</a></td>
+					<td>{{topic.created_at | date: 'MMMM dd, yyyy'}}</td>
+					<td ng-show="topic._user._id == uc.login_user._id"><button ng-click='tc.remove(uc.login_user._id, topic._id)'>Delete</button></td>
+					<td ng-show="topic._user._id != uc.login_user._id"> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</div>

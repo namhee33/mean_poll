@@ -1,0 +1,14 @@
+<div>
+	<h2>Hello!</h2>
+	<p>Please enter your name to Survey Poll</p>
+	<form name='usersForm' ng-submit='uc.login()'>
+		
+		<input type='text' name='name' ng-model='uc.new_name' ng-minlength='4' ng-maxlength='20' required>
+		<input type='submit' value='Add' ng-disabled='usersForm.name.$invalid'>
+	</form>
+	<div ng-messages="usersForm.name.$error" style="color:maroon" role="alert" ng-show= 'usersForm.name.$dirty'>
+	    <div ng-message="required">You did not enter a field</div>
+	    <div ng-message="minlength">Your field is too short</div>
+	    <div ng-message="maxlength">Your field is too long</div>
+	</div> <!-- end of message -->
+</div>

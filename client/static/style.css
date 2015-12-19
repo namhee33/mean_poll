@@ -1,0 +1,51 @@
+#container{
+	padding: 20px;
+	width: 1020px;
+}
+
+#nav, #content{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#nav{
+	width: 200px;
+}
+#content{
+	width: 810px;
+}
+
+.product{
+	width: 130px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 20px 10px;
+	padding: 5px;
+	text-align: center;
+}
+
+.dup{
+	background-color: red;
+}
+
+table{
+	margin-top: 20px;
+	border-collapse: collapse;
+}
+
+th, td{
+	border: 1px solid;
+	padding: 5px 10px;
+}
+
+tr:nth-child(even){
+	background-color: gray;
+}
+
+#myForm > div{
+	margin-bottom: 10px;
+}
+
+#myForm > div > input{
+	margin-left: 10px;
+}
